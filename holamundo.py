@@ -4,8 +4,9 @@ app = Flask(__name__)
 @app.route('/')
 
 def index():
-    return 'Hola Mundo'
+    return 'Hello World'
 
-@app.route('/lala')
-def lala():
-    return 'lalala'
+@app.route('/post/<int:post_id>')
+def lala(post_id):
+    # return 'The post id is ' + str(post_id)
+    return f'The post id is {post_id}'
