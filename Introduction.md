@@ -1,1 +1,29 @@
-
+### Intoduction
+* Add venv
+```sh
+python3 -m venv venv
+```
+* Activate venv
+```sh
+. venv/bin/activate
+```
+* Install Flask
+```sh
+pip3 install Flask
+```
+* Add neovim if used
+```sh
+pip3 install neovim
+```
+* Export 
+```sh
+export FLASK_APP=holamundo.py
+```
+* Export for development
+```sh
+export FLASK_ENV=development
+```
+* Flask run
+```sh
+flask run
+```
