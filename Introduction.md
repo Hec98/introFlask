@@ -27,7 +27,7 @@ export FLASK_ENV=development
 ```sh
 flask run
 ```
-***### HTTP methods via curl
+### HTTP methods via curl
 ```sh
 curl -X GET http://127.0.0.1:5000/post/1
 ```
