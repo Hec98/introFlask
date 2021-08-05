@@ -1,4 +1,5 @@
-from flask import Flask, request, url_for, redirect, abort
+from flask import Flask, request, url_for, redirect, abort, render_template
+from flask.templating import render_template
 app = Flask(__name__)
 
 @app.route('/')
@@ -24,3 +25,6 @@ def form():
 
 @app.route('/redirect', methods = ['GET'])
 def redirectX(): return redirect(url_for('lala', post_id = 1))
+
+@app.route('/template', methods = ['GET'])
+def template(): return render_template('template.html')
