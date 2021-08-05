@@ -28,3 +28,6 @@ def redirectX(): return redirect(url_for('lala', post_id = 1))
 
 @app.route('/template', methods = ['GET'])
 def template(): return render_template('template.html')
+
+@app.route('/json', methods = ['GET'])
+def json(): return {"username": "Chanchito", "email": "chanchito@gmail.com"}
