@@ -30,7 +30,7 @@ flask run
 curl -X GET http://127.0.0.1:5000/post/1
 ```
 ```sh
-url -X GET http://127.0.0.1:5000/json
+curl -X GET http://127.0.0.1:5000/json
 ```
 * POST
 ```sh
