@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, url_for
 app = Flask(__name__)
 
 @app.route('/')
@@ -17,6 +17,8 @@ def lala(post_id):
 def form():
     form = request.form
     key1 = request.form['key1']
-    ret = f'Form: {form}\nKey1: {key1}'
+    path = url_for('index')
+    path_post = url_for('lala', post_id = 1)
+    ret = f'Form: {form}\nKey1: {key1}\nPath: {path}\nPath POST: {path_post}'
     print(ret)
     return ret
