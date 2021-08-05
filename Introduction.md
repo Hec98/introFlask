@@ -15,13 +15,9 @@ pip3 install Flask
 ```sh
 pip3 install neovim
 ```
-* Export 
-```sh
-export FLASK_APP=holamundo.py
-```
 * Export for development
 ```sh
-export FLASK_ENV=development
+export FLASK_APP=holamundo.py && export FLASK_ENV=development
 ```
 * Flask run
 ```sh
