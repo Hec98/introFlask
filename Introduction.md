@@ -40,3 +40,7 @@ curl -X PUT http://127.0.0.1:5000/post/1
 ```sh
 curl -d "key1=data1&key2=data2" -X POST http://127.0.0.1:5000/form
 ```
+* Redirect
+```sh
+curl -X GET http://127.0.0.1:5000/redirect
+```

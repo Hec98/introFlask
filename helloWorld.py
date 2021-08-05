@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for
+from flask import Flask, request, url_for, redirect
 app = Flask(__name__)
 
 @app.route('/')
@@ -22,3 +22,6 @@ def form():
     ret = f'Form: {form}\nKey1: {key1}\nPath: {path}\nPath POST: {path_post}'
     print(ret)
     return ret
+
+@app.route('/redirect', methods = ['GET'])
+def redirectX(): return redirect(url_for('lala', post_id = 1))
