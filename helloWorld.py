@@ -1,5 +1,7 @@
 from flask import Flask, request, url_for, redirect, abort, render_template
 from flask.templating import render_template
+from db import selectDataBase
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -33,3 +35,8 @@ def json(): return {"username": "Chanchito", "email": "chanchito@gmail.com"}
 
 @app.route('/home', methods = ['GET'])
 def home(): return render_template('home.html', message  = 'Hello World')
+
+@app.route('/db', methods = ['GET'])
+def dataBase():
+    data = selectDataBase()
+    return render_template('db.html', dB = data)
