@@ -8,13 +8,10 @@
     <link rel="shortcut icon" type="image/ico" href="{{ url_for('static', filename='favicon.ico') }}"/>
     <title>{% block title %}{% endblock %}</title
   </head>
-  <body class="container">
-    <nav>
-      <h1>Title</h1>
-    </nav>
-    <p>
+  <body>
+    <div class="container mt-3">
       {% block content %}{% endblock %}
-    </p>
+    </div>
     <script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
   </body>
 </html>
