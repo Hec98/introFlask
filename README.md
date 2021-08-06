@@ -49,6 +49,10 @@ curl -d "key1=data1&key2=data2" -X POST http://127.0.0.1:5000/form
 curl -X GET http://127.0.0.1:5000/redirect
 ```
 ### Mysql Database
+* Install mysql-connector-python
+```
+pip install mysql-connector-python
+```
 * Create database
 ```sql
 CREATE DATABASE prueba;
