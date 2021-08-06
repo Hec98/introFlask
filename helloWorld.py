@@ -3,7 +3,6 @@ from flask.templating import render_template
 app = Flask(__name__)
 
 @app.route('/')
-
 def index(): return 'Hello World'
 
 # GET, POST, PUT, PATCH, DELETE
@@ -31,3 +30,6 @@ def template(): return render_template('template.html')
 
 @app.route('/json', methods = ['GET'])
 def json(): return {"username": "Chanchito", "email": "chanchito@gmail.com"}
+
+@app.route('/home', methods = ['GET'])
+def home(): return render_template('home.html', message  = 'Hello World')
