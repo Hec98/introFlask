@@ -48,4 +48,22 @@ curl -d "key1=data1&key2=data2" -X POST http://127.0.0.1:5000/form
 ```sh
 curl -X GET http://127.0.0.1:5000/redirect
 ```
+### Mysql Database
+* Create database
+```sql
+CREATE DATABASE prueba;
+```
+```sql
+USE prueba;
+```
+* Create table
+```sql
+CREATE TABLE `Usuario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `age` int(3) DEFAULT NULL,
+   PRIMARY KEY (`id`)
+);
+```
 [![logoN1-w.png](https://i.postimg.cc/bvwkKP8Y/logoN1-w.png)](https://github.com/Hec98)
