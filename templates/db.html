@@ -1,16 +1,31 @@
 {% extends 'base.html' %}
-{% block content %}
-  <h2>Data Base</h2>
-  {% for user in dB %}
-    <ul class="list-group list-group-horizontal">
-      <li class="list-group-item">{{ user['id'] }}</li>
-      <li class="list-group-item">{{ user['username'] }}</li>
-      <li class="list-group-item">{{ user.email }}</li>
-      <li class="list-group-item">{{ user.age }}</li>
-    </ul>
-  {% endfor %}
-{% endblock %}
 
 {% block title %}
   Data Base
 {% endblock %}
+
+{% block content %}
+  <h2>Data Base</h2>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">username</th>
+      <th scope="col">email</th>
+      <th scope="col">email<th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in dB %}
+      <tr>
+        <th scope="row">{{ user['id'] }}</th>
+        <td>{{ user['username'] }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.age }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+{% endblock %}
+
+
