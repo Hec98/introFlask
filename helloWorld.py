@@ -1,6 +1,6 @@
 from flask import Flask, request, url_for, redirect, abort, render_template
 from flask.templating import render_template
-from db import selectDataBase
+from db import selectDataBase, insertData
 
 app = Flask(__name__)
 
@@ -37,6 +37,17 @@ def json(): return {"username": "Chanchito", "email": "chanchito@gmail.com"}
 def home(): return render_template('home.html', message  = 'Hello World')
 
 @app.route('/db', methods = ['GET'])
-def dataBase():
-    data = selectDataBase()
-    return render_template('db.html', dB = data)
+def dataBase(): return render_template('db.html', dB = selectDataBase())
+
+@app.route('/create', methods = ['GET', 'POST'])
+def create(): 
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        age = request.form['age']
+        insert = insertData(username, email, age)
+        if insert == 1: return redirect(url_for('dataBase'))
+        else: abort(403, 'Failed to send to database')
+
+    return render_template('create.html')
+
